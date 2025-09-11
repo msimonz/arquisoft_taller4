@@ -17,3 +17,16 @@ docker run --name arqui-soft-mysql \
 
 #Para ingresar al contenedor
 docker exec -it arqui-soft-mysql mysql -u root -p
+
+#Correr el Back
+./mvnw spring-boot:run
+--Si no vas a correr el front es válido correr solamente el back y hacer pruebas con POSTMAN:
+  ->GET http://localhost:8080/productos
+  ->POST http://localhost:8080/productos
+    Body:
+    {
+      "nombre": "Alejandro Cañadas (negro)",
+      "precio": 0,
+      "cantidad": 1
+    }
+
