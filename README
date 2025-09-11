@@ -1,3 +1,6 @@
+#Para hacerle pull a la imagen del contenedor mysql
+docker pull mysql:8.0
+
 #Para crear el volumen que permita la persistencia del contenedor
 docker volume create mysql_data
 
