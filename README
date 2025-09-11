@@ -1,0 +1,16 @@
+#Para crear el volumen que permita la persistencia del contenedor
+docker volume create mysql_data
+
+
+#Para Correr el contenedor teniendo la imagen mysql version 8.0
+docker run --name arqui-soft-mysql \
+  -v mysql_data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=password \
+  -e MYSQL_DATABASE=dbtaller4 \
+  -e MYSQL_USER=simis \
+  -e MYSQL_PASSWORD=password \
+  -p 3306:3306 \
+  -d mysql:8.0
+
+#Para ingresar al contenedor
+docker exec -it arqui-soft-mysql mysql -u root -p
