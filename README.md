@@ -63,7 +63,7 @@ docker kill {container-id}
 docker rm arqui-soft-mysql 
 
 
-## zPara construir y correr los contenedores (docker compose)
+## Para construir y correr los contenedores (docker compose)
 docker-compose up --build
 
 ### Verificar que los contenedores están corriendo (terminal)
