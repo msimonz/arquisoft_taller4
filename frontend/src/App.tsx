@@ -15,14 +15,14 @@ export default function App() {
 
   // cargar productos
   useEffect(() => {
-    fetch("http://localhost:8080/productos")
+    fetch("http://backend:8080/productos")
       .then((res) => res.json())
       .then((data) => setProductos(data));
   }, []);
 
   // crear producto
   const crearProducto = async () => {
-    const res = await fetch("http://localhost:8080/productos", {
+    const res = await fetch("http://backend:8080/productos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevo),
@@ -34,7 +34,7 @@ export default function App() {
 
   // eliminar producto
   const eliminarProducto = async (id: number) => {
-    await fetch(`http://localhost:8080/productos/${id}`, { method: "DELETE" });
+    await fetch(`http://backend:8080/productos/${id}`, { method: "DELETE" });
     setProductos(productos.filter((p) => p.id !== id));
   };
 
@@ -47,7 +47,7 @@ export default function App() {
   const actualizarProducto = async () => {
     if (!editando) return;
     const res = await fetch(
-      `http://localhost:8080/productos/${editando.id}`,
+      `http://backend:8080/productos/${editando.id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

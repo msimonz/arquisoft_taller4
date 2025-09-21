@@ -52,3 +52,21 @@ npm start
 docker stop arqui-soft-mysql
 docker kill {container-id}        
 docker rm arqui-soft-mysql 
+
+
+## Para construir y correr los contenedores (docker compose)
+docker-compose up --build
+
+#Verificar que los contenedores están corriendo (terminal)
+docker ps
+
+#Probar la base de datos
+docker exec -it mysql_db mysql -u simis -p dbtaller4
+(contraseña: password)
+SELECT COUNT(*) FROM producto;
+
+#probar backend
+http://localhost:8080/productos
+
+#probar frontend
+http://localhost:3000
